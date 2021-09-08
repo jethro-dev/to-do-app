@@ -12,4 +12,28 @@ form {
     button {
         padding: .5rem .8rem;
     }
+    select {
+        color: $secondaryColor;
+        width: 10rem;
+        cursor: pointer;
+        padding: .5rem;
+    }
+    .select {
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+        &::after {
+            content: "\25BC";
+            position: absolute;
+            background: $primaryColor;
+            top: -3.5px;
+            right: 0;
+            padding: .5rem;
+            pointer-events: none;
+            transition: .3s all ease-in-out;
+        }
+        &:hover::after {
+            background: $secondaryColor;
+        }
+    }
 }

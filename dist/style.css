@@ -34,6 +34,14 @@ button:hover {
   color: white;
 }
 
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+}
+
 header {
   min-height: 20vh;
   display: -webkit-box;
@@ -78,6 +86,35 @@ form input {
 
 form button {
   padding: .5rem .8rem;
+}
+
+form select {
+  color: #A770EF;
+  width: 10rem;
+  cursor: pointer;
+  padding: .5rem;
+}
+
+form .select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+form .select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #FDB99B;
+  top: -3.5px;
+  right: 0;
+  padding: .5rem;
+  pointer-events: none;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+form .select:hover::after {
+  background: #A770EF;
 }
 
 section .todo-container {
