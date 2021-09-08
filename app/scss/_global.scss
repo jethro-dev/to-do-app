@@ -44,3 +44,10 @@ input {
 input[type="search"] {
     -webkit-appearance: none;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

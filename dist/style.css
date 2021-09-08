@@ -50,6 +50,13 @@ input[type="search"] {
   -webkit-appearance: none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 header {
   min-height: 20vh;
   display: -webkit-box;
