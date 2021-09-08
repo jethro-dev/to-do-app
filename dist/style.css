@@ -94,6 +94,7 @@ form input {
 
 form button {
   padding: .5rem .8rem;
+  margin-left: .5rem;
 }
 
 form select {
