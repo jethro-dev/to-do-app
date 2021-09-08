@@ -42,6 +42,14 @@ select {
   border: none;
 }
 
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
 header {
   min-height: 20vh;
   display: -webkit-box;
