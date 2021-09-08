@@ -17,6 +17,7 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: 300ms all ease-in-out;
     }
     .todo-item {
         flex: 1;
@@ -46,5 +47,13 @@ section {
     .fa-trash,
     .fa-check {
         pointer-events: none;
+    }
+    .completed {
+        text-decoration: line-through;
+        opacity: .5;
+    }
+    .fall {
+        transform: translateY(8rem) rotateZ(20deg);
+        opacity: 0;
     }
 }

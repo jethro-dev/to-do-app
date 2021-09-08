@@ -1,7 +1,11 @@
 header {
     min-height: 20vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    #word-limit-text {
+        opacity: 0;
+    }
 }

@@ -2,6 +2,7 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const wordLimitText = document.querySelector('#word-limit-text');
 
 //Event Listener
 todoButton.addEventListener('click', addTodo);
@@ -11,9 +12,14 @@ todoList.addEventListener('click', deleteCheck);
 function addTodo() {
     //Prevent form from submitting
     event.preventDefault();
+    if (todoInput.value.length > 18) {
+        wordLimitText.style.opacity = 1;
+        todoInput.value = "";
+        return;
+    }
     if (todoInput.value !== "") {
 
-        console.log('Button pressed');
+        wordLimitText.style.opacity = 0;
         //Todo DIV
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo");
@@ -37,15 +43,26 @@ function addTodo() {
 
         //Clear Todo Input Value
         todoInput.value = "";
+    } else {
+        wordLimitText.style.opacity = 0;
     }
 }
 
 function deleteCheck(e) {
-    console.log('Delete pressed');
     const item = e.target;
     //Delete ToDo
     if (item.classList[0] === 'trash-btn') {
         const todo = item.parentElement;
-        todo.remove();
+        todo.classList.add('fall');
+        todo.addEventListener('transitionend', function() {
+            todo.remove();
+        });
+        //todo.remove();
+    }
+
+    //Check mark
+    if (item.classList[0] === 'complete-btn') {
+        const todo = item.parentElement;
+        todo.classList.toggle('completed')
     }
 }
